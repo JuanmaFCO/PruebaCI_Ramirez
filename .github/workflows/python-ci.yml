@@ -1,0 +1,20 @@
+nombre:  Python  CI  
+ 
+en:  [push]  
+ 
+trabajos:  
+  compilación:  
+    se ejecuta en:  ubuntu-latest  
+ 
+    pasos:  
+    -  usos:  acciones/checkout@v3  
+    -  nombre:  Instalar  Python  
+      usos:  acciones/setup-python@v4  
+      con:  
+        python-version:  '3.x'  
+ 
+    -  nombre:  Instalar  dependencias  
+      ejecutar:  pip  install  pytest  
+ 
+    -  nombre:  Ejecutar  pruebas  
+      ejecutar:  pytest 
